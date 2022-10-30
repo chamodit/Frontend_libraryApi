@@ -1,4 +1,4 @@
 export const AppConfig = {
-  production: true,
+  production: false,
   environment: 'http://localhost:3000',
 };
