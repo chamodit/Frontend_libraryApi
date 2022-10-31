@@ -15,7 +15,18 @@ interface APIResponse {
   styleUrls: ['./manage-book.component.css'],
 })
 export class ManageBookComponent implements OnInit {
-  constructor() {}
+  displayedColumns = ['name', 'isbn', 'author'];
+  dataSource: MatTableDataSource<any>;
 
-  ngOnInit(): void {}
+  constructor(private booksService: BooksService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.viewAllBooks();
+  }
+
+  viewAllBooks() {
+    this.booksService.viewBooks().subscribe((res: APIResponse) => {
+      this.dataSource = new MatTableDataSource(res.data);
+    });
+  }
 }
