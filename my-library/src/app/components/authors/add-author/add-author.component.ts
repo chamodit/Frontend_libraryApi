@@ -7,6 +7,7 @@ import {
   FormGroup,
   FormBuilder,
   FormControl,
+  FormsModule,
 } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -30,7 +31,8 @@ export class AddAuthorComponent implements OnInit {
     private authorsService: AuthorsService,
     private route: ActivatedRoute,
     private router: Router,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
+    private formModule: FormsModule
   ) {}
 
   ngOnInit(): void {
